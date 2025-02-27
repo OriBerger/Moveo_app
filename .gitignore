@@ -3,10 +3,24 @@
 /server/node_modules
 /client/node_modules
 
-# Environment variables
+# Environment files
 /server/.env
 /client/.env
 
 # Build files
 /client/dist
 /server/dist
+
+# Logs
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE files (VSCode, WebStorm, etc.)
+.vscode/
+.idea/
+
+# Optional: You may want to ignore npm-debug logs if they exist
+npm-debug.log*
