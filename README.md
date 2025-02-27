@@ -7,7 +7,6 @@ This project is a real-time, collaborative coding application where a **mentor**
 - **Frontend**: React (with TypeScript)
 - **Backend**: Node.js (with TypeScript), Express, Socket.io
 - **Database**: MongoDB (for storing code blocks)
-- **Deployment**: [Online Demo](https://moveo-app-1.onrender.com)
 
 ## Features
 
@@ -21,7 +20,6 @@ This project is a real-time, collaborative coding application where a **mentor**
 - **Frontend**: React, TypeScript
 - **Backend**: Node.js, Express, Socket.io
 - **Database**: MongoDB
-- **Deployment**: Render (for backend), Vercel (or similar) for frontend.
 
 ## How to Run the Project
 
@@ -83,11 +81,10 @@ This project is a real-time, collaborative coding application where a **mentor**
 
 ## Deployment
 
-This project is deployed on Render for the backend and a static hosting platform (like Vercel or Netlify) for the frontend.
+- **Frontend**: The frontend is deployed at [https://moveo-app-1.onrender.com](https://moveo-app-1.onrender.com). This URL provides access to the live site, where users can join as either mentors or students and collaborate on code blocks in real-time.
 
-- **Backend Deployment**: The backend is deployed at [https://moveo-app-1.onrender.com](https://moveo-app-1.onrender.com). It serves the API and the static frontend files.
-  
-Make sure to check the project in your browser at the deployment site for a fully functional real-time code collaboration experience!
+### Note:
+- The backend is hosted on a separate URL and is not required to be manually accessed by the user. The frontend communicates with the backend automatically for real-time functionality.
 
 ## License
 
