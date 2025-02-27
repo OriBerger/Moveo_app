@@ -30,7 +30,6 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 app.use("/api", codeBlockRoutes);
-app.use(express.static(path.join(__dirname, "../client/dist")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
