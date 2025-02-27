@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { io } from "socket.io-client";
 
-const socket = io(process.env.REACT_APP_API_URL || process.env.VITE_SERVER_URL);
+const socket = io("http://localhost:5000");
 
 export default function CodeBlockPage() {
   const { id } = useParams();
