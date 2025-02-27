@@ -8,8 +8,6 @@ import connectDB from "./config/db";
 import CodeBlock from "./models/CodeBlock";
 import codeBlockRoutes from "./routes/codeBlockRoutes";
 
-// Import for manually defining __dirname and __filename in ES Modules
-
 // Load environment variables
 dotenv.config();
 const app = express();
