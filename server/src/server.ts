@@ -2,27 +2,38 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import http from "http";
+import path from "path";
 import { Server } from "socket.io";
-import connectDB from './config/db';
-import CodeBlock from './models/CodeBlock';
+import connectDB from "./config/db";
+import CodeBlock from "./models/CodeBlock";
+import codeBlockRoutes from "./routes/codeBlockRoutes";
 
+// Import for manually defining __dirname and __filename in ES Modules
+
+// Load environment variables
 dotenv.config();
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*", // Make sure this is correct for production
+    origin: "*", // Adjust this for production security
     methods: ["GET", "POST"],
   },
 });
 
 app.use(cors());
-
 app.use(express.json());
+
 const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
 connectDB();
+
+app.use("/api", codeBlockRoutes);
+app.use(express.static(path.join(__dirname, "../client/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
 
 const rooms: Record<string, string[]> = {}; // Track users in each room
 
